@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title></title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles.css">
+
+		<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+
+	</head>
+	
+	<body>
+
+		<div id="canvasDiv"></div>
+
+		<div id="loadingDiv"><span id="loadingText">Loading...</span></div>
+
+		<div id="introductionDiv" class="mainDiv"> 
+
+			<h1 id="introductionHeader">Remember</h1>
+
+			<p id="introductionPara">Everyone who we lost because of COVID-19. See how each country <i>truly</i> weighs in in terms of deaths. (Data updated daily from John Hopkins University)</p>
+
+			<div id="keyDiv"> 
+
+				<img src="https://www.countryflags.io/US/shiny/64.png">
+				<div id="equals">  =  </div>
+				<div id="keyText">200 Real People</div>
+
+
+			</div>
+
+			<div id="warning">If you take anything away from this, it's to <br> <b style="color: rgb(255, 0, 0); font-size: 24px;">STAY AT HOME!</b></div>
+
+
+		</div>
+
+		<div id="buttonDiv" class="mainDiv"> <button type="button" class="btn btn-danger" id="newCountryButton">New Country</button> </div>
+
+		<div id="informationDiv" class="mainDiv"> 
+
+			<button type="button" class="btn btn-secondary" id="nextCountry">Next Country</button>
+
+			<div id="countryInfo">
+				
+				<h1><span id="brickPosition"></span>. <span id="countryName"></span></h1>
+				<h3><span id="countryDeaths"></span> people lost.</h3>
+				<img src="images/blanck.png" width=128 id="flag">
+
+
+			</div>
+
+			<button type="button" class="btn btn-secondary" id="previousCountry">Previous Country</button>
+
+
+
+
+
+		</div>
+
+
+
+	</body>
+
+	<footer>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+		<script type="text/javascript" src="api.js"></script>
+		<script type="text/javascript" src="canvas.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		
+
+	</footer>
+
+</html>
