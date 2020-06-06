@@ -21,3 +21,5 @@ $("#previousCountry")
 $("#nextCountry")
 .click(() => {NEXT_BRICK = true})
 
+
+

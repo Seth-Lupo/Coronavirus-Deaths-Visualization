@@ -300,7 +300,7 @@ class SmokeParticle {
 		p.fill(150, 150, 150, this.alpha)
 		p.ellipse(this.x, this.y, this.diameter, this.diameter)
 
-		this.alpha -= 20
+		this.alpha -= 10
 
 	}
 
