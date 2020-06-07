@@ -23,6 +23,9 @@ var makeRequest = function (inputCountry) {
 		}).fail(() => {
 
 			console.log(myCountry.name + " is invalid")
+			
+			$("#loadingText")
+			.text("API not working... please try again later.")
 
 		})
 
