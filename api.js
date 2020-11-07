@@ -7,30 +7,38 @@ var makeRequest = function (inputCountry) {
 
 	return new Promise(resolve => {
 
-		$.get("https://api.covid19api.com/total/country/" + myCountry.code + "/status/deaths", (data) => {
+		$.ajax({
+
+			url: "https://api.covid19api.com/total/country/" + myCountry.code + "/status/deaths", 
+			method: "GET",
+			dataType: "json",
+			headers: {"x-access-token": "3299c8a6-8d16-41c6-ae06-2bfb8711a77b"},
+			success: ((data) => {
   			
-			var formattedData = {
+				var formattedData = {
 
-				name: myCountry.name,
-				deaths: data[data.length - 1]["Cases"],
-				image: "https://cors-anywhere.herokuapp.com/https://www.countryflags.io/" + myCountry.code + "/shiny/64.png"
+					name: myCountry.name,
+					deaths: data[data.length - 1]["Cases"],
+					image: "https://cors-anywhere.herokuapp.com/https://www.countryflags.io/" + myCountry.code + "/shiny/64.png"
 
-			}
+				}
 
-			COUNTRY_DATA_LIST.push(formattedData)
-
+				COUNTRY_DATA_LIST.push(formattedData)
   		
-		}).fail(() => {
-
-			console.log(myCountry.name + " is invalid")
+			}),
 			
-			$("#loadingText")
-			.text("API not working... please try again later.")
+			error: (() => {
+
+				console.log(myCountry.name + " is invalid")
+				
+				$("#loadingText")
+				.text("API not working... please try again later.")
+
+			}),
 
 		})
 
 	})
-
 }
 
 var fetchData = function () {
@@ -46,6 +54,21 @@ var fetchData = function () {
 			makeRequest(country)
 			
 		}
+
+
+		// var i = 0;
+		// var interval = setInterval(function(){
+		    
+		//     	var country = countryList[i]
+		// 		console.log(countryList[i]["name"])
+		// 		console.log(i)
+		// 		makeRequest(country)
+
+		//     i++;
+		//     if(i === countryList.length) {
+		//         clearInterval(interval);
+		//     }
+		// }, 1000);
 
 		var checkDataCompletion = setInterval(() => {
 

@@ -122,7 +122,7 @@ class Brick {
 			canvas.rumble.play()
 			canvas.shadow = true
 
-			sleep(3000)
+			sleep(4000)
 			.then(() => {
 
 				this.vel = 1
