@@ -11,7 +11,7 @@ var UPDATE_INFO = function(brick, canvas) {
 	.text(brick.name)
 
 	$("#countryDeaths")
-	.text(brick.population)
+	.text(brick.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
 
 	$("#flag")
 	.attr("src", brick.flagLink)
@@ -51,7 +51,7 @@ class Brick {
 
 		this.vel = 0
 		this.y = 0
-		this.height = (this.population/200)/10 * 40
+		this.height = (this.population/1000)/10 * 40
 
 	}
 
